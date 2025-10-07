@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Registration form</title>
+  <link rel="stylesheet" href="ss.css">
+</head>
+<body>
+  <form id="regform">
+    Full Name: <input type="text" id="fullname"><br><br>
+    Password: <input type="password" id="password"><br><br>
+    Confirm Password: <input type="password" id="confirmpassword"><br><br>
+    Mobile Number: <input type="number" id="number"><br><br>
+    E-mail: <input type="email" id="email"><br><br>
+    <input type="submit" value="Submit">
+  </form>
+
+  <script>
+    const Registration = document.getElementById('regform');
+
+    Registration.addEventListener('submit', function(event) {
+      event.preventDefault();
+
+      const username = document.getElementById('fullname');
+      const userpassword = document.getElementById('password');
+      const confirmpass = document.getElementById('confirmpassword');
+      const usermobile = document.getElementById('number');
+      const useremail = document.getElementById('email');
+
+      if (username.value.trim() === '') {
+        alert('Please enter your name');
+        return;
+      }
+
+      if (userpassword.value.trim() === '') {
+        alert('Please enter your password');
+        return;
+      }
+
+      if (confirmpass.value.trim() === '') {
+        alert('Please confirm your password');
+        return;
+      }
+
+      if (userpassword.value.trim()  !== confirmpass.value.trim()) {
+        alert('password mismatch')
+        return;
+      }
+
+      if (usermobile.value.trim() === '') {
+        alert('Please enter your mobile number');
+        return;
+      }
+
+      if (useremail.value.trim() === '') {
+        alert('Please enter your E-mail');
+        return;
+      }
+
+      alert('Registration successful!');
+      
+    });
+  </script>
+</body>
+</html>
